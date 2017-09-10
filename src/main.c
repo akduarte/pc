@@ -86,6 +86,7 @@ int main_avaliacao_etapa_1 (int argc, char **argv)
   if (getenv("INF47_TABLE")){
     main_avaliacao_etapa_1_tabela();
   }
+  printf("\nNumero de linhas: %d\n", comp_get_line_number());
   return 0;
 }
 

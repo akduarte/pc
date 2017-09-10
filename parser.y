@@ -52,5 +52,8 @@
 /* Regras (e ações) da gramática */
 
 programa:
-
+	 
 %%
+
+
+
