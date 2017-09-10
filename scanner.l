@@ -3,6 +3,7 @@
 */
 %{
 #include "parser.h" //arquivo automaticamente gerado pelo bison
+#include <math.h>
 
 int line = 1;
 %}
@@ -50,6 +51,18 @@ int line = 1;
 "*"	{ return yytext[0]; }
 
 
+
+
+[0-9]+"."[0-9]+	{atof(yytext); return TK_LIT_FLOAT;}
+[0-9]+      {atof(yytext); return TK_LIT_INT;}
+"'"[0-9a-zA-Z]"'"	{ atof(yytext); return TK_LIT_CHAR; }
+\"([^\\\"]|\\.)*\"	{ atof(yytext); return TK_LIT_STRING; }
+"true"			{ atof(yytext); return TK_LIT_TRUE; }
+"false"			{ atof(yytext); return TK_LIT_FALSE; }
+[A-Za-z_][A-Za-z_0-9]*  { atof(yytext); return TK_IDENTIFICADOR;}
+
+
+
 [ \t]
 \n   {++line;}
 "//".*
@@ -60,6 +73,7 @@ int line = 1;
 <COMMENT>"*/"  {BEGIN(INITIAL);}
 .	{ return TOKEN_ERRO; }
 %%
+
 
 int comp_get_line_number()
 {

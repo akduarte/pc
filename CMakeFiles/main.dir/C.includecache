@@ -39,6 +39,8 @@ inttypes.h
 -
 parser.h
 /home/alexandre/Desktop/Compiladores/Projeto/build/pc/parser.h
+math.h
+-
 unistd.h
 -
 
