@@ -68,7 +68,7 @@ int line = 1;
 "//".*
 
 "/*"   {BEGIN(COMMENT);}
-<COMMENT>\n  { }
+<COMMENT>\n  {++line;}
 <COMMENT>.
 <COMMENT>"*/"  {BEGIN(INITIAL);}
 .	{ return TOKEN_ERRO; }
