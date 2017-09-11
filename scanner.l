@@ -1,5 +1,6 @@
 /*
-  Coloque aqui o identificador do grupo e dos seus membros
+  Alexandre Kochenborger Duarte
+  Joao Fernando Pereira
 */
 %{
 #include "parser.h" //arquivo automaticamente gerado pelo bison
@@ -45,16 +46,19 @@ int line = 1;
 "<<"	{ return TK_OC_SL; }
 ">>"	{ return TK_OC_SR; }
 
-[,;:(){}+-/<>=!&$] { return yytext[0]; }
+[,;:(){}+/<>=!&] { return yytext[0]; }
 "["	{ return yytext[0]; }
 "]"	{ return yytext[0]; }
 "*"	{ return yytext[0]; }
+"-"	{ return yytext[0]; }
+"$"	{ return yytext[0]; }
 
 
 
 
-(\+|-)?[0-9]+\.[0-9]+	{atof(yytext); return TK_LIT_FLOAT;}
-(\+|-)?[0-9]+	      	{atof(yytext); return TK_LIT_INT;}
+
+[0-9]+\.[0-9]+	{atof(yytext); return TK_LIT_FLOAT;}
+[0-9]+	      	{atof(yytext); return TK_LIT_INT;}
 '.'			{ atof(yytext); return TK_LIT_CHAR; }
 \"([^\\\"]|\\.)*\"	{ atof(yytext); return TK_LIT_STRING; }
 "true"			{ atof(yytext); return TK_LIT_TRUE; }
