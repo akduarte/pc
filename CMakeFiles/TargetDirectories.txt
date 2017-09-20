@@ -1,5 +1,0 @@
-/home/alexandre/Desktop/Compiladores/Projeto/build/pc/CMakeFiles/test.dir
-/home/alexandre/Desktop/Compiladores/Projeto/build/pc/CMakeFiles/main.dir
-/home/alexandre/Desktop/Compiladores/Projeto/build/pc/CMakeFiles/edit_cache.dir
-/home/alexandre/Desktop/Compiladores/Projeto/build/pc/CMakeFiles/cc_dict_main_example.dir
-/home/alexandre/Desktop/Compiladores/Projeto/build/pc/CMakeFiles/rebuild_cache.dir
